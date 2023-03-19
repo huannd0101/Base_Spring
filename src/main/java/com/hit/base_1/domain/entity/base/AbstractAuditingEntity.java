@@ -25,30 +25,30 @@ import java.io.Serializable;
 @MappedSuperclass
 public class AbstractAuditingEntity implements Serializable {
 
-    @JsonProperty("id")
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @JsonProperty("id")
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @JsonProperty("createdBy")
-    private Long createdBy;
+  @JsonProperty("createdBy")
+  private Long createdBy;
 
-    @JsonProperty("createdDate")
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = CommonConstant.DATE_FORMAT_YYYYMMDDHHMM)
-    private String createdDate;
+  @JsonProperty("createdDate")
+  @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+  @JsonSerialize(using = LocalDateTimeSerializer.class)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = CommonConstant.DATE_FORMAT_YYYYMMDDHHMM)
+  private String createdDate;
 
-    @JsonProperty("lastModifiedBy")
-    private Long lastModifiedBy;
+  @JsonProperty("lastModifiedBy")
+  private Long lastModifiedBy;
 
-    @JsonProperty("lastModifiedDate")
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = CommonConstant.DATE_FORMAT_YYYYMMDDHHMM)
-    private String lastModifiedDate;
+  @JsonProperty("lastModifiedDate")
+  @JsonDeserialize(using = LocalDateTimeDeserializer.class)
+  @JsonSerialize(using = LocalDateTimeSerializer.class)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = CommonConstant.DATE_FORMAT_YYYYMMDDHHMM)
+  private String lastModifiedDate;
 
-    @JsonProperty("status")
-    private Boolean status;
+  @JsonProperty("status")
+  private Boolean status;
 
 }

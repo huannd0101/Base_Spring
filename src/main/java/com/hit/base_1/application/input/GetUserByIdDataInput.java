@@ -11,6 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class GetUserByIdDataInput {
 
-    private Long id;
+  private Long id;
 
 }

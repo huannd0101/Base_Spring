@@ -21,16 +21,16 @@ import javax.validation.constraints.NotBlank;
 @Table(name = TableNameConstant.TABLE_USER)
 public class User extends AbstractAuditingEntity {
 
-    @Column(unique = true)
-    @NotBlank(message = UserMessageConstant.EXCEPTION_GENERAL_REQUIRED)
-    private String username;
+  @Column(unique = true)
+  @NotBlank(message = UserMessageConstant.EXCEPTION_GENERAL_REQUIRED)
+  private String username;
 
-    @NotBlank(message = UserMessageConstant.EXCEPTION_GENERAL_REQUIRED)
-    private String password;
+  @NotBlank(message = UserMessageConstant.EXCEPTION_GENERAL_REQUIRED)
+  private String password;
 
-    @NotBlank(message = UserMessageConstant.EXCEPTION_GENERAL_REQUIRED)
-    private String fullName;
+  @NotBlank(message = UserMessageConstant.EXCEPTION_GENERAL_REQUIRED)
+  private String fullName;
 
-    private String avatar;
+  private String avatar;
 
 }

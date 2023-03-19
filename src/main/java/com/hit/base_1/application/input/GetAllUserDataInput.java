@@ -11,6 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class GetAllUserDataInput {
 
-    private Integer page;
+  private Integer page;
 
 }

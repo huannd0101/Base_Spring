@@ -14,10 +14,10 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 public class GetAuthenticationParameter {
 
-    @NotBlank(message = UserMessageConstant.INVALID_GENERAL_NOT_BLANK)
-    private String username;
+  @NotBlank(message = UserMessageConstant.INVALID_GENERAL_NOT_BLANK)
+  private String username;
 
-    @NotBlank(message = UserMessageConstant.INVALID_GENERAL_NOT_BLANK)
-    private String password;
+  @NotBlank(message = UserMessageConstant.INVALID_GENERAL_NOT_BLANK)
+  private String password;
 
 }

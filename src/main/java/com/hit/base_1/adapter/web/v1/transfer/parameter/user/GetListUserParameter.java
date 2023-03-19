@@ -14,7 +14,7 @@ import javax.validation.constraints.Min;
 @AllArgsConstructor
 public class GetListUserParameter {
 
-    @Min(value = 0, message = UserMessageConstant.INVALID_DATA_PAGE_MIN)
-    private Integer page;
+  @Min(value = 0, message = UserMessageConstant.INVALID_DATA_PAGE_MIN)
+  private Integer page;
 
 }

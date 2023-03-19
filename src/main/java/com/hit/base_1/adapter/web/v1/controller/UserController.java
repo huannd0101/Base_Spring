@@ -2,6 +2,7 @@ package com.hit.base_1.adapter.web.v1.controller;
 
 import com.hit.base_1.adapter.web.base.RestApiV1;
 import com.hit.base_1.adapter.web.base.VsResponseUtil;
+import com.hit.base_1.adapter.web.v1.transfer.parameter.user.CreateUserParameter;
 import com.hit.base_1.adapter.web.v1.transfer.parameter.user.GetListUserParameter;
 import com.hit.base_1.application.constants.UrlConstant;
 import com.hit.base_1.application.input.CreateUserDataInput;
@@ -24,41 +25,41 @@ import javax.validation.Valid;
 @RestApiV1
 public class UserController {
 
-    private final UserMapper userMapper = Mappers.getMapper(UserMapper.class);
-    private final UserService userService;
+  private final UserMapper userMapper = Mappers.getMapper(UserMapper.class);
+  private final UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+  public UserController(UserService userService) {
+    this.userService = userService;
+  }
 
-    @GetMapping(UrlConstant.User.GET_USER_DATA)
-    public ResponseEntity<?> getAllUser(@Valid GetListUserParameter parameter) {
-        //create input
-        GetAllUserDataInput input = new GetAllUserDataInput(parameter.getPage());
+  @GetMapping(UrlConstant.User.GET_USER_DATA)
+  public ResponseEntity<?> getAllUser(@Valid GetListUserParameter parameter) {
+    //create input
+    GetAllUserDataInput input = new GetAllUserDataInput(parameter.getPage());
 
-        //Get output
-        GetListUserDataOutput output = userService.getAllUser(input);
+    //Get output
+    GetListUserDataOutput output = userService.getAllUser(input);
 
-        //Return output
-        return VsResponseUtil.ok(output);
-    }
+    //Return output
+    return VsResponseUtil.ok(output);
+  }
 
-    @GetMapping(UrlConstant.User.GET_USER_ID_DATA)
-    public ResponseEntity<?> getUserById(@PathVariable("id") Long id) {
-        GetUserByIdDataInput input = new GetUserByIdDataInput(id);
+  @GetMapping(UrlConstant.User.GET_USER_ID_DATA)
+  public ResponseEntity<?> getUserById(@PathVariable("id") Long id) {
+    GetUserByIdDataInput input = new GetUserByIdDataInput(id);
 
-        GetUserDataOutput output = userService.getUserById(input);
+    GetUserDataOutput output = userService.getUserById(input);
 
-        return VsResponseUtil.ok(output);
-    }
+    return VsResponseUtil.ok(output);
+  }
 
-    @PostMapping(UrlConstant.User.CREATE_USER)
-    public ResponseEntity<?> createUser(@RequestBody UserDTO userDTO) {
-        CreateUserDataInput input = userMapper.userDTOToCreateUserDataInput(userDTO);
+  @PostMapping(UrlConstant.User.CREATE_USER)
+  public ResponseEntity<?> createUser(@RequestBody CreateUserParameter parameter) {
+    CreateUserDataInput input = userMapper.toCreateUserDataInput(parameter);
 
-        GetUserDataOutput output = userService.creatUser(input);
+    GetUserDataOutput output = userService.creatUser(input);
 
-        return VsResponseUtil.ok(output);
-    }
+    return VsResponseUtil.ok(output);
+  }
 
 }

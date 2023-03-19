@@ -36,6 +36,14 @@ public class RestData<T> {
     this.data = data;
   }
 
+  public static RestData<?> error(String userMessage, String devMessage) {
+    return new RestData<>(RestStatus.ERROR, userMessage, devMessage, null);
+  }
+
+  public static RestData<?> error(String userMessage) {
+    return new RestData<>(RestStatus.ERROR, userMessage, null);
+  }
+
   public RestStatus getStatus() {
     return status;
   }
@@ -66,14 +74,6 @@ public class RestData<T> {
 
   public void setData(T data) {
     this.data = data;
-  }
-
-  public static RestData<?> error(String userMessage, String devMessage) {
-    return new RestData<>(RestStatus.ERROR, userMessage, devMessage, null);
-  }
-
-  public static RestData<?> error(String userMessage) {
-    return new RestData<>(RestStatus.ERROR, userMessage, null);
   }
 
 }

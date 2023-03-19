@@ -11,8 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class CreateUserDataInput {
 
-    private String username;
-    private String password;
-    private String fullName;
+  private String username;
+  private String password;
+  private String fullName;
 
 }

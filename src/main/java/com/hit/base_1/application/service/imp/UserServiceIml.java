@@ -59,7 +59,7 @@ public class UserServiceIml implements UserService {
     @Override
     public GetUserDataOutput creatUser(CreateUserDataInput input) {
         //check gì ở đây thì check nhé :v
-        return new GetUserDataOutput(userRepository.save(userMapper.createUserDataInputToUser(input)));
+        return new GetUserDataOutput(userRepository.save(userMapper.toUser(input)));
     }
 
 }

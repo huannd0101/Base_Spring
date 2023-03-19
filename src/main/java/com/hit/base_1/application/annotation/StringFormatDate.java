@@ -12,10 +12,10 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = StringFormatDateValidator.class)
 public @interface StringFormatDate {
 
-    String message() default "err.invalid.date_format";
+  String message() default "err.invalid.date_format";
 
-    Class<?>[] groups() default {};
+  Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default {};
+  Class<? extends Payload>[] payload() default {};
 
 }
